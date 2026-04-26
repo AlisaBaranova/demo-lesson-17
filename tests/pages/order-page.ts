@@ -23,6 +23,7 @@ export class OrderPage {
     this.confirmationPopup = page.getByTestId('orderSuccessfullyCreated-popup')
     this.logoutButton = page.getByTestId('logout-button')
   }
+
   async checkInnerComponents(): Promise<void> {
     await expect(this.title).toBeVisible()
     await expect(this.statusButton).toBeVisible()
@@ -31,6 +32,7 @@ export class OrderPage {
     await expect(this.phoneInput).toBeVisible()
     await expect(this.commentInput).toBeVisible()
   }
+
   async createOrder(): Promise<void> {
     await this.nameInput.fill(faker.person.firstName())
     await this.phoneInput.fill(faker.phone.number())
@@ -38,6 +40,7 @@ export class OrderPage {
     await this.createOrderButton.click()
     await expect(this.confirmationPopup).toBeVisible()
   }
+
   async checkCreateOrderBtnEnabled(enabled: boolean): Promise<void> {
     await expect(this.createOrderButton).toBeEnabled({ enabled })
   }

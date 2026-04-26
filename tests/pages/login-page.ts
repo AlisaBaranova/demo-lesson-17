@@ -17,20 +17,24 @@ export class LoginPage {
     this.passwordField = page.getByTestId('password-input')
     this.valError = page.getByTestId('username-input-error')
   }
+
   async open() {
     await this.page.goto(this.url)
   }
+
   async signIn(username: string, password: string) {
     await this.usernameField.fill(username)
     await this.passwordField.fill(password)
     await this.signInButton.click()
     return new OrderPage(this.page)
   }
+
   async checkInnerComponents(): Promise<void> {
     await expect(this.usernameField).toBeVisible()
     await expect(this.passwordField).toBeVisible()
     await expect(this.signInButton).toBeVisible()
   }
+
   async checkValidationError(): Promise<void> {
     await this.usernameField.fill('2')
     await this.passwordField.fill('2')
