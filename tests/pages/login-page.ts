@@ -42,3 +42,4 @@ export class LoginPage {
     await expect(this.valError.nth(1)).toBeVisible()
   }
 }
+//login page

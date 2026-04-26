@@ -42,3 +42,4 @@ test('Logout test', async ({ page }) => {
   await orderPage.logoutButton.click()
   await loginPage.checkInnerComponents()
 })
+//auth test
