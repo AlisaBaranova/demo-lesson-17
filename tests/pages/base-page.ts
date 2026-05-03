@@ -12,7 +12,7 @@ export class BasePage {
     this.footer = page.locator('.Footer')
     this.langBtnRu = this.footer.locator('.language__button').nth(1)
     this.langBtnEng = this.footer.locator('.language__button').nth(0)
-    this.navFooter = this.footer.locator('.nav-Footer')
+    this.navFooter = this.footer.locator('.navigate-wrapper')
   }
 
   async checkFooterComponents(): Promise<void> {
